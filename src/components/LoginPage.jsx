@@ -1,0 +1,46 @@
+import React from 'react'
+import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import './LoginPage.css'
+
+const LoginPage = () => {
+    let navigate=useNavigate()
+    let {register,handleSubmit,formState:{errors}}=useForm()
+
+    let onSubmit=(data)=>{
+        let users=JSON.parse(localStorage.getItem('userdata'))||[]
+
+        let auth=users.find(user=>user.email===data.email && user.password===data.password)
+
+        if(auth){
+            localStorage.setItem('user',data.email)
+            alert('Login Successful')
+            navigate('/payment')
+
+        }else{
+            alert('Invalid User')
+        }
+
+        console.log(data);
+        
+    }
+  return (
+    <div className='main-container'>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <h1>Login Here</h1>
+
+        <label htmlFor="email">Email:</label>
+        <input type="email" {...register('email',{required:true})} />
+        {errors.email&&<p className='errors'>{errors.email.message}</p>}
+
+        <label htmlFor="password"> Password:</label>
+        <input type="password"  {...register('password',{required:true})} />
+        {errors.password&&<p className='errors'>{errors.password.message}</p>}
+
+        <input type="submit" />
+      </form>
+    </div>
+  )
+}
+
+export default LoginPage

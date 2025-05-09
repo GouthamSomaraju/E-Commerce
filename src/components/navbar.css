@@ -1,0 +1,100 @@
+/* General reset */
+body, ul, li, h1 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Theme-aware body */
+  .app.light {
+    background-color: white;
+    color: black;
+  }
+  
+  .app.dark {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  /* Navbar styling per theme */
+  .app.light .navbar {
+    background-color: #dadada;
+    color: black;
+  }
+  
+  .app.dark .navbar {
+    background-color: #2b2b2b;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* .navbar-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+  
+  /* Links: theme-aware */
+  .app.light .navbar-links a {
+    color: black;
+  }
+  
+  .app.dark .navbar-links a {
+    color: white;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .navbar-links a:hover {
+    text-decoration: underline;
+    color: #f0db4f;
+  }
+  
+  /* Login button (common styles) */
+  .login-button {
+    background-color: #007bff;
+    margin: 5px;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: theme toggle button */
+  .theme-toggle {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: inherit;
+  }
+  
