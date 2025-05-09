@@ -31,7 +31,13 @@
     text-align: left;
     font-size: x-large;
   }
-  
+  .app.light input[type="email"],
+.app.light input[type="password"] {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
   input[type="email"],
   input[type="password"] {
     width: 95%;
@@ -60,7 +66,6 @@
     background-color: #388e3c;
   }
   
-  /* Error messages */
   .errors {
     color: red;
     font-size: 0.85rem;
@@ -68,7 +73,6 @@
     margin-bottom: 1rem;
   }
   
-  /* Dark mode overrides */
   .app.dark .main-container {
     background-color: #1e1e1e;
     color: #ffffff;

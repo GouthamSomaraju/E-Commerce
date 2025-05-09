@@ -6,7 +6,7 @@ import './CartPage.css'
 
 const CartPage = () => {
   let navigate = useNavigate()
-  let isLoggedIn = JSON.parse(localStorage.getItem('user'))
+  let isLoggedIn = localStorage.getItem('user')
 
   let handleBuyNow = () => {
     if (isLoggedIn) {

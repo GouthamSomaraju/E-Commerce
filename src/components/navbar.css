@@ -17,7 +17,7 @@ body, ul, li, h1 {
   
   /* Navbar styling per theme */
   .app.light .navbar {
-    background-color: #dadada;
+    background-color: #e9e9e9;
     color: black;
   }
   
@@ -34,13 +34,21 @@ body, ul, li, h1 {
     width: 100%;
     box-sizing: border-box;
   }
+  .navbar-links li a{
+    font-size: larger;
+    font-weight: bold;
+    padding-left: 10px;
+  }
   
-  /* .navbar-section {
+  .navbar-section {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-  } */
+  }
+  .auth-user{
+    display: flex;
+  }
   
   .navbar-logo {
     font-size: 1.5rem;
@@ -71,30 +79,53 @@ body, ul, li, h1 {
     color: #f0db4f;
   }
   
-  /* Login button (common styles) */
-  .login-button {
-    background-color: #007bff;
-    margin: 5px;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    color: white;
-  }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Optional: theme toggle button */
-  .theme-toggle {
-    margin-left: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: inherit;
-  }
+  /* Common Button Styles */
+.login-button,
+.logout-button {
+  margin: 5px;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Light mode - button colors */
+.app.light .login-button,
+.app.light .logout-button {
+  background-color: #ffd000;
+  color: white;
+}
+
+.app.light .login-button:hover,
+.app.light .logout-button:hover {
+  background-color: #fcd21a;
+}
+
+/* Dark mode - button colors */
+.app.dark .login-button,
+.app.dark .logout-button {
+  background-color: #ffd000;
+  color: #1e1e1e;
+}
+
+.app.dark .login-button:hover,
+.app.dark .logout-button:hover {
+  background-color: #fcd21a;
+  color: white;
+}
+
+/* Theme toggle stays the same */
+.theme-toggle {
+  margin-left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+}
+
   

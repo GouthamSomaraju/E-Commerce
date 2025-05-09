@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
 import './LoginPage.css'
 
 const LoginPage = () => {
@@ -12,8 +13,9 @@ const LoginPage = () => {
 
         let auth=users.find(user=>user.email===data.email && user.password===data.password)
 
-        if(auth){
-            localStorage.setItem('user',data.email)
+        if(auth){    
+        localStorage.setItem('user', JSON.stringify(data.email))  // store as JSON
+
             alert('Login Successful')
             navigate('/payment')
 
@@ -36,6 +38,8 @@ const LoginPage = () => {
         <label htmlFor="password"> Password:</label>
         <input type="password"  {...register('password',{required:true})} />
         {errors.password&&<p className='errors'>{errors.password.message}</p>}
+
+        <p>Don't have account? <Link to='/signup'>SignUp</Link> </p>
 
         <input type="submit" />
       </form>

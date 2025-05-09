@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import './SignUp.css';
 
 
@@ -45,6 +45,8 @@ const SignUp = () => {
             maxLength: { value: 12, message: 'Password should not more than 12 characters' }
           })} />
           {errors.password && <p className='errors'>{errors.password.message}</p>}
+
+          <p>Already have account? <Link to='/login'>SignUp</Link> </p>
     
           <button type="submit">Signup</button>
         </form>
