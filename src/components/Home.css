@@ -37,7 +37,8 @@
     object-fit: contain;
   }
   
-  .product-title {
+  .product-title {   
+    /* text-decoration:;  */
     font-size: 1.1rem;
     margin: 1rem 0;
   }

@@ -39,7 +39,7 @@ const LoginPage = () => {
         <input type="password"  {...register('password',{required:true})} />
         {errors.password&&<p className='errors'>{errors.password.message}</p>}
 
-        <p>Don't have account? <Link to='/signup'>SignUp</Link> </p>
+        <p>Don't have account? <Link t2o='/signup'>SignUp</Link> </p>
 
         <input type="submit" />
       </form>

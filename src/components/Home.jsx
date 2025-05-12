@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from '../redux/createSlice'
 import { addToCart } from '../redux/cartSlice'
 import './Home.css'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     let {data:posts,loading,error}=useSelector(state=>state.posts)
@@ -21,8 +22,10 @@ const Home = () => {
             <div className="products-grid">
                 {posts.map(post=>(
                     <div key={post.id} className="product-card">
+                        <Link to={`./product/${post.id}`}>
                         <img src={post.image} alt={post.title} className="product-image"/>
-                        <h2 className="product-title">{post.title}</h2>
+                        </Link>
+                        <h2 className="product-title" >{post.title}</h2>
                         <p className="product-price">Rs. {post.price}</p>
                         <button className="add-to-cart" onClick={()=>dispatch(addToCart(post))}>Add to Cart</button>
                     </div>

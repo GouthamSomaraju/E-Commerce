@@ -7,6 +7,7 @@ import CartPage from "./components/cartPage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUp";
 import PaymentPage from "./components/PaymentPage";
+import ProductDetail from "./components/ProductPage";
 
 // Helper component to handle layout logic
 const AppLayout = () => {
@@ -25,6 +26,7 @@ const AppLayout = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </>
   );
